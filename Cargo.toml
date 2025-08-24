@@ -4,3 +4,5 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+prompts = "0.1.0"
+tokio = { version = "1.46.0", features = ["full"]}
