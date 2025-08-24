@@ -1,7 +1,13 @@
+use std::any;
+
 use prompts::{Prompt, text::TextPrompt};
 
+use crate::ai_client::Gpt4AllClient;
+mod ai_client;
+
 #[tokio::main]
-async fn main() {
+async fn main() -> anyhow::Result<()> {
+    let client = Gpt4AllClient::new()?;
     let mut prompt = TextPrompt::new("");
 
     loop {
@@ -19,4 +25,6 @@ async fn main() {
         }
         prompt = TextPrompt::new("");
     }
+
+    Ok(())
 }
