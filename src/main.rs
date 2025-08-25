@@ -7,7 +7,7 @@ mod ai_client;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let client = Gpt4AllClient::new()?;
+    let client = Gpt4AllClient::new("http://localhost:4891/v1/chat/completions")?;
     let mut prompt = TextPrompt::new("");
 
     loop {
